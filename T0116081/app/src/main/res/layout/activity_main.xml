@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:width="100dp"
+        android:textSize="30sp"
+        android:id="@+id/center_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:id="@+id/_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_above="@+id/center_tv"/>
+
+    <Button
+        android:id="@+id/_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/center_tv"/>
+
+    <Button
+        android:id="@+id/_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/center_tv"/>
+    <Button
+        android:id="@+id/_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/center_tv"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"/>
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

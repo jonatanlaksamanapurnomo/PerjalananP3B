@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">M0116081</string>
+    <string name="et_placeholder" >Please Input some Text</string>
+    <string name="btn_text">Click</string>
+    <string name="et_value"></string>
+    <string name="value">Value</string>
+</resources>

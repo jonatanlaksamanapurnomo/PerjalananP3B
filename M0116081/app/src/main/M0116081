@@ -1,0 +1,13 @@
+Jika dihapus maka semua view yang memiliki atribut android tidak bisa digunakan
+
+wrap_content = ukuran view seminimal mungkin
+match_parent = ukuran view mengikuti ukuran layout parent
+	
+Karena jika menggunakan px, posisi view tidak akan sama di semua ukuran layar
+
+agar bisa dipakai berkali-kali
+
+mencari view berdasarkan id yang diminta
+karena pemanggilan fungsi findViewById berpengaruh ke penggunaan memory
+
+menambahkan implements View.OnClickListener
