@@ -41,9 +41,28 @@ public class StringAdapter extends BaseAdapter {
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View itemView  = this.activity.getLayoutInflater().inflate(R.layout.list_item_string , null);
-        TextView tv_content = itemView.findViewById(R.id.tv_content);
-        tv_content.setText((String) this.getItem(i));
-        return  tv_content;
+        ViewHolder viewHolder;
+        if(view == null){
+            view  = this.activity.getLayoutInflater().inflate(R.layout.list_item_string , null);
+            viewHolder = new ViewHolder(view);
+            view.setTag(viewHolder);
+        }
+        else {
+            viewHolder = (ViewHolder) view.getTag();
+        }
+        viewHolder.updateView((String) this.getItem(i));
+
+        return  view;
+    }
+
+    private  class ViewHolder{
+        protected  TextView tv_content;
+        public ViewHolder(View view){
+            this.tv_content = view.findViewById(R.id.tv_content);
+        }
+        public void updateView(String text){
+            this.tv_content.setText(text);
+        }
     }
 }
+
