@@ -1,6 +1,4 @@
 package com.example.t0116081.Presenter;
-
-import android.view.View;
 import android.widget.Button;
 
 import com.example.t0116081.Model.Angka;
