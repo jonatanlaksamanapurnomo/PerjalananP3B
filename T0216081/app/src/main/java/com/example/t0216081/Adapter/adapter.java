@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.t0216081.Model.Food;
+import com.example.t0216081.Presenter.MainactivityPresenter;
 import com.example.t0216081.R;
 
 import java.util.ArrayList;
@@ -15,14 +16,17 @@ import java.util.ArrayList;
 public class adapter extends BaseAdapter {
     private ArrayList<Food> data;
     private Activity activity;
+    private  MainactivityPresenter presenter;
 
-    public adapter(Activity activity){
+    public adapter(Activity activity , MainactivityPresenter presenter){
         this.activity= activity;
         this.data = new ArrayList<Food>();
+        this.presenter = presenter;
     }
 
     public void add(Food food){
         this.data.add(food);
+        this.notifyDataSetChanged();
     }
     public void loadData(ArrayList<Food> foods){
       this.data = foods;
@@ -47,7 +51,7 @@ public class adapter extends BaseAdapter {
         ViewHolder viewHolder;
         if(view == null){
             view = this.activity.getLayoutInflater().inflate(R.layout.food_list_item , viewGroup , false);
-            viewHolder = new ViewHolder(view);
+            viewHolder = new ViewHolder(view ,this.presenter );
             view.setTag(viewHolder);
         }
         else{

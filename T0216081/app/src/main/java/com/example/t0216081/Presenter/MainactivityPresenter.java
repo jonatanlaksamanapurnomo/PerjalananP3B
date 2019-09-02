@@ -20,16 +20,23 @@ public class MainactivityPresenter   {
     public void add(String title , String detail){
         Food food = new Food(title , detail);
         this.data.add(food);
+        this.ui.resetAddForm();
         this.ui.updateList(this.data);
     }
     public void deleteList(int i ){
         this.data.remove(i);
+        this.ui.updateList(this.data);
+    }
+    public void toggleFav(int i){
+       this.data.get(i).isFav = !this.data.get(i).isFav;
+       this.ui.updateList(this.data);
 
     }
 
 //    using inner class
     public  interface ImainActivity{
         void updateList(ArrayList<Food> food);
+        void resetAddForm();
     }
 
 }

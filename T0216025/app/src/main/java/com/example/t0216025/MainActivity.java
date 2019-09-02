@@ -5,23 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener , IMainActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener , IMainActivity  {
     protected ListView list;
     protected FoodListAdapter adapter;
     protected  MainPresenter presenter;
     protected Button btnAdd;
     protected EditText edtTitle;
     protected EditText edtDetail;
+    protected ImageView star,bin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.edtTitle=findViewById(R.id.edt_title);
         this.edtDetail=findViewById(R.id.edt_details);
         this.btnAdd.setOnClickListener(this);
-
         this.adapter=new FoodListAdapter(this);
         this.presenter.loadData();
-        this.presenter.addList("jojo" , "Bukan makanan");
         this.list.setAdapter(this.adapter);
-        this.presenter.addList("jojo" , "Bukan Rey");
-        this.presenter.deleteList(0);
+
+
 
 
     }
@@ -48,12 +45,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
       if(view.getId()==this.btnAdd.getId())
       {
-          //this.adapter.addLine(this.edtTitle.getText()+" ");
+          this.presenter.addList(this.edtTitle.getText().toString(), this.edtDetail.getText().toString());
       }
     }
 
+
     @Override
     public void updateList(List<Food> foods) {
+
         this.adapter.loadData(foods);
+
     }
+
 }

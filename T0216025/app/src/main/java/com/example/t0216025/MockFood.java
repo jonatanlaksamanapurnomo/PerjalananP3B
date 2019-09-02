@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.t0216025;
 
 public class MockFood {
     public static String[] foodStringArr = { "Nasi Goreng Biasa", "Nasi Goreng Telor", "Nasi Goreng Ayam",

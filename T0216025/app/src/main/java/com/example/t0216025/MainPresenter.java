@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.t0216025;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,9 +39,11 @@ public class MainPresenter  {
         ui.updateList( this.foods);
     }
 
-    public boolean toggleFav()
+    public void toggleFav( int index)
     {
-        return false;
+        Food kambing = this.foods.get(index);
+        kambing.isFavorite = !kambing.isFavorite;
+        ui.updateList(this.foods);
     }
 
 }

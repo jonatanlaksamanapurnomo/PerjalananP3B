@@ -1,9 +1,9 @@
-package com.example.myapplication;
+package com.example.t0216025;
 
 public class Food {
     protected String title;
     protected String detail;
-    protected boolean isFavorite;
+    public boolean isFavorite;
 
     public Food(String title, String detail)
     {

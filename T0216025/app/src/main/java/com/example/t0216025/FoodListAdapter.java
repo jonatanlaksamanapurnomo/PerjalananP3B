@@ -1,6 +1,7 @@
 package com.example.t0216025;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,9 @@ public class FoodListAdapter extends BaseAdapter{
     }
 
     public void loadData(List<Food> foods){
+
         this.itemList = foods;
+        this.notifyDataSetChanged();
     }
     @Override
     public Object getItem(int i) {
@@ -39,42 +42,47 @@ public class FoodListAdapter extends BaseAdapter{
     public long getItemId(int i) {
         return 0;
     }
-    protected class ViewHolder {
-        protected TextView title ;
 
-       public ViewHolder(View view)
-       {
-           this.title=view.findViewById(R.id.tv_title);
-       }
-       public void updateView(Food food)
-       {
-           this.title.setText(food.getTitle());
-       }
-    }
     @Override
     public View getView(int i, View convertView, ViewGroup parent) {
-        convertView=LayoutInflater.from(this.activity).inflate(R.layout.food_list_item, parent,false);
-        Food currentFood=(Food) this.getItem(i);
-
-        TextView tvTitle=convertView.findViewById(R.id.tv_title);
-        tvTitle.setText(currentFood.getTitle());
-
-        TextView tvDetail=convertView.findViewById(R.id.tv_detail);
-        tvDetail.setText(currentFood.getDetail());
-
-        ImageView btnStar=convertView.findViewById(R.id.btn_star);
-
-        if(currentFood.isFavorite==true )
-        {
-            btnStar.setImageResource(android.R.drawable.btn_star_big_on);
-
+        ViewHolder viewHolder;
+        if(convertView == null){
+            convertView = LayoutInflater.from(this.activity).inflate(R.layout.food_list_item , parent , false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
         }
-        else
-        {
-            btnStar.setImageResource(android.R.drawable.btn_star_big_off);
+        else{
+            viewHolder = (ViewHolder) convertView.getTag();
         }
-
+        viewHolder.updateView( (Food)this.getItem(i));
         return convertView;
+    }
+    protected class ViewHolder  {
+        protected TextView tvText , tvDesk ;
+        protected ImageView star,bin;
+
+
+        public ViewHolder (View view) {
+
+            this.tvText = view.findViewById(R.id.tv_title) ;
+            this.tvDesk = view.findViewById(R.id.tv_detail);
+            this.star = view.findViewById(R.id.btn_star);
+
+        }
+
+        public void updateView(Food food) {
+            this.tvText.setText(food.title);
+            this.tvDesk.setText(food.detail);
+            if(food.isFavorite == true)
+            {
+                this.star.setImageResource(android.R.drawable.btn_star_big_on);
+            }
+            else
+            {
+                this.star.setImageResource(android.R.drawable.btn_star_big_off);
+            }
+
+        }
     }
 
 }
