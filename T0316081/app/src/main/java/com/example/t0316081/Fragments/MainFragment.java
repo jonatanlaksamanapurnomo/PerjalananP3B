@@ -15,11 +15,12 @@ import androidx.fragment.app.Fragment;
 import com.example.t0316081.FragmentListener;
 import com.example.t0316081.R;
 
-public class MainFragment extends Fragment implements View.OnClickListener {
+public class MainFragment extends Fragment implements View.OnClickListener  {
 
     private EditText et_show;
     private FragmentListener listener;
     private Button btn_click;
+
 
     @Override
     public void onAttach(Context context) {
@@ -36,6 +37,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.et_show = view.findViewById(R.id.et_text);
         this.btn_click = view.findViewById(R.id.btn_click);
         this.btn_click.setOnClickListener(this);
+
         return view;
     }
 

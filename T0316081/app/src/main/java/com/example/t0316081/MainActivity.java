@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+
+import com.example.t0316081.Fragments.LeftFragment;
 import com.example.t0316081.Fragments.MainFragment;
 import com.example.t0316081.Fragments.ResultFragment;
 import com.example.t0316081.Fragments.SecondFragment;
