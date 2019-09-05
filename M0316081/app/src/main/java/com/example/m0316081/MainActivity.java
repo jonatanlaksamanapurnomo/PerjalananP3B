@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.service.autofill.FillEventHistory;
 
 import com.example.m0316081.fragments.FirstFragment;
 import com.example.m0316081.fragments.FragmentListener;
@@ -26,8 +25,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.fragmentManager  = this.getSupportFragmentManager();
 
         this.changePage(1);
-//        this.firstFragment.changeMessage("jojo");
-//        this.changePage(2);
+
 
     }
 
