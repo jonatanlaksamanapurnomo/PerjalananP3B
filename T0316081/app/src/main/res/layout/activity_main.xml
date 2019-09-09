@@ -36,7 +36,7 @@
         android:layout_gravity="start">
 
         <fragment
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@id/left_drawer"
             android:name="com.example.t0316081.Fragments.LeftFragment">
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end" >
         <fragment
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:name="com.example.t0316081.Fragments.RightFragment">
 

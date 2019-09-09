@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             else{
                 this.resultFragment = ResultFragment.newInstance(text);
                this.resultFragment.show(this.getSupportFragmentManager(),"dialog");
+               ft.show(this.mainFragment);
             }
 
         }

@@ -9,6 +9,8 @@
            android:layout_height="match_parent"
            android:orientation="vertical">
               <TextView
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="10dp"
                   android:id="@+id/homepage"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -17,6 +19,8 @@
                   android:clickable="true">
               </TextView>
               <TextView
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="10dp"
                   android:id="@+id/page2"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -25,6 +29,8 @@
                   android:clickable="true">
               </TextView>
               <TextView
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="10dp"
                   android:id="@+id/exit"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
