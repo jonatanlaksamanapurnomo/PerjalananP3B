@@ -1,0 +1,7 @@
+#Thu Sep 12 15:37:53 WIB 2019
+base.0=/home/joo/AndroidStudioProjects/T0316081/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/home/joo/AndroidStudioProjects/T0316081/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
