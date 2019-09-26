@@ -1,0 +1,5 @@
+1.action down akan mendetect jika ada gerakan  jari yang mengarah ke bawah (down)
+sedangkan pointer down harus mengugnakan tambahan jari
+
+2.action up akan mendetect jika ada gerakan jari yang meragarah ke atas (up)
+sedangkan porinter up harus menggunakan tambahan jari
